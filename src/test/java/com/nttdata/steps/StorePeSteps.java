@@ -97,4 +97,8 @@ public class StorePeSteps {
     }
 
 
+    public void validarTituloCarrito() {
+        this.driver.findElement(StorePePage.carritoBoton).click();
+        Assertions.assertEquals("Carrito",OrderPeSteps(driver).getTitulo());
+    }
 }

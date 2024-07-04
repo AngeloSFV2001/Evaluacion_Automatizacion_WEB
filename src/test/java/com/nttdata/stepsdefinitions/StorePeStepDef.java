@@ -62,6 +62,7 @@ public class StorePeStepDef {
     public void navegoALaCategoriaYSubcategoria(String categoria, String subCategoria) {
         storePeSteps.clickEnCategoria();
         storePeSteps.clickEnSubCategoria();
+        screenShot();
     }
 
     @And("agrego {int} unidades del primer producto al carrito")
@@ -69,35 +70,43 @@ public class StorePeStepDef {
         storePeSteps.elegirElPrimerProducto();
         storePeSteps.elegirLaCantidadDeProductos(cantidad);
         storePeSteps.completarLaCompra();
+        screenShot();
     }
 
     @Then("valido en el popup la confirmación del producto agregado")
     public void validoEnElPopupLaConfirmaciónDelProductoAgregado() throws InterruptedException {
         storePeSteps.validarProductos();
-
+        screenShot();
     }
 
     @And("valido en el popup que el monto total sea calculado correctamente")
     public void validoEnElPopupQueElMontoTotalSeaCalculadoCorrectamente() {
         storePeSteps.validarMontoCompra();
+        screenShot();
     }
 
     @When("finalizo la compra")
     public void finalizoLaCompra() {
         storePeSteps.validarCompra();
+        screenShot();
     }
 
     @Then("valido el titulo de la pagina del carrito")
     public void validoElTituloDeLaPaginaDelCarrito() {
+        storePeSteps.validarTituloCarrito();
+        screenShot();
     }
 
     @And("vuelvo a validar el calculo de precios en el carrito")
     public void vuelvoAValidarElCalculoDePreciosEnElCarrito() {
+        storePeSteps.validarCompra();
+        screenShot();
     }
 
     public void screenShot(){
         byte[] evidencia = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
         this.scenario.attach(evidencia, "image/png", "evidencias");
+        screenShot();
     }
 
 

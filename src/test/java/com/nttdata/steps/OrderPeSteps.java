@@ -22,4 +22,7 @@ public class OrderPeSteps {
     public Double getValorPrenda(){
         return parseDouble(this.driver.findElement(OrderPage.validacionPrecioDeProducto).getText());
     }
+    public String getTitulo(){
+        return this.driver.findElement(OrderPage.validacionTituloCarrito).getText();
+    }
 }

@@ -18,6 +18,7 @@ public class StorePePage {
     public static By addProductCartButton = By.xpath("//button[@class=\"btn btn-primary add-to-cart\"]");
     public static By popupVentana = By.xpath("//body/div[@id='blockcart-modal']/div[1]/div[1]");
     public static By completarCompra = By.xpath("(//a[@class=\"btn btn-primary\"])[2]");
+    public static By carritoBoton = By.xpath("//div[@class=\"clablockcart cart-preview active\"]");
     private  WebDriver driver;
     private WebDriverWait wait;
 
